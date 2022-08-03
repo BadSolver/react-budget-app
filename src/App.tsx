@@ -1,7 +1,7 @@
 
 function App() {
   return (
-    <div>123</div>
+    <h1>Start react-Budget app</h1>
   );
 }
 
