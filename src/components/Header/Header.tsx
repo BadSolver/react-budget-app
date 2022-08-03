@@ -3,7 +3,7 @@ import { IOption } from '../../types'
 import { CardBudget } from '../CardBudget/CardBudget'
 import { CardRemaining } from '../CardRemaining/CardRemaining'
 import { CardSpent } from '../CardSpent/CardSpent'
-import { CustomSelect, options } from '../Select/CustomSelect'
+import { CustomSelect, options } from '../CustomSelect/CustomSelect'
 import { Title } from '../Title/Title'
 import { StyledHeader } from './style'
 
