@@ -23,6 +23,5 @@ export const Input = ({placeholder}: IProps) => {
     <>
        <StyledInput placeholder={placeholder} value={newExpense} onChange={handleNewExpanse}/>
     </>
-   
   )
 }
