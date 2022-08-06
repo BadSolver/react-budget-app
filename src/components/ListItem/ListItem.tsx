@@ -12,29 +12,12 @@ interface IProps {
 export const ListItem = ({text, cost}: IProps) => {
 
   const {expenses} = useExpensesContext()
-
+        
   return (
-        <>
-
-          {expenses.map((expense) => {
-            return <StyledListItem>
-              <Title>
-                <p>{expense.body}</p>
-              </Title>
-              <Badge cost={expense.cost}></Badge>
-              <Icons src={close}></Icons>
-            </StyledListItem>
-          })}
-
-        {/* <Title> {text}</Title>
+    <StyledListItem>
+        <Title>{text}</Title>
         <Badge cost={cost}></Badge>
-        <Icons src={close}></Icons> */}
-    </>
-  // return (
-  //   <StyledListItem>
-  //       <Title>{text}</Title>
-  //       <Badge cost={cost}></Badge>
-  //       <Icons src={close}></Icons>
-  //   </StyledListItem>
+        <Icons src={close}></Icons>
+    </StyledListItem>
   )
 }
