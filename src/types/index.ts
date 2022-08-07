@@ -1,4 +1,6 @@
+import { Currency } from "../config/currency";
+
 export interface IOption {
-    readonly value: string;
-    readonly label: string;
+    value: Currency;
+    label: keyof typeof Currency;
 } 
