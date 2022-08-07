@@ -14,7 +14,7 @@ export const ExpensesContext = createContext<IExpensesContext>({
     expenses: []
 })
 
-// export const useExpensesContext = () => useContext<IExpensesContext>(ExpensesContext)
+export const useExpensesContext = () => useContext<IExpensesContext>(ExpensesContext)
 
 const useExpensesValue = () => {
     const [expensesContext, setExpensesContext] = useState<IExpensesContext>(() => {
