@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
+import { AppContextProvider } from './context/AppContext/AppContext';
 import { GlobalStyle } from './ui/GlobalStyles';
 
 const root = ReactDOM.createRoot(
@@ -8,7 +9,9 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <GlobalStyle/>
-      <App />
+    <AppContextProvider>
+      <GlobalStyle/>
+        <App />
+      </AppContextProvider>
   </React.StrictMode>
 );
