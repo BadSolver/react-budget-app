@@ -1,6 +1,6 @@
 import { createContext, FC, ReactNode, useContext, useState } from "react";
 
-interface IExpense {
+export interface IExpense {
     id: string,
     body: string,
     cost: number

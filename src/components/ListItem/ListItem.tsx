@@ -1,20 +1,23 @@
 import { Badge } from "../Badge/Badge";
-import { Icons, StyledListItem, Title } from "./style";
-import { useExpensesContext } from "../../context/ExpensesContext/ExpensesContext";
+import { IExpense, useExpensesContext } from "../../context/ExpensesContext/ExpensesContext";
+import { DeleteButton, StyledListItem, Title } from "./style";
+import { Expenses } from "../Expenses/Expenses";
 
 interface IProps {
-  text: string;
-  cost: number;
+  deleteExpense: (id: string) => void;
+  expense: IExpense;
+  text: string
 }
 
-export const ListItem = ({ text, cost }: IProps) => {
-  const { expenses } = useExpensesContext();
-
+export const ListItem = ({ deleteExpense, expense, text }: IProps) => {
+  
+  const {body, id, cost} = expense
+  
   return (
-    <StyledListItem>
+    <StyledListItem id={id}>
       <Title>{text}</Title>
-      <Badge cost={cost}></Badge>
-      <Icons></Icons>
+      <Badge cost={cost}/>
+      <DeleteButton onClick={() => deleteExpense(id)}/>
     </StyledListItem>
   );
 };

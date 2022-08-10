@@ -1,11 +1,32 @@
+import { IExpense, useExpensesContext } from "../../context/ExpensesContext/ExpensesContext"
 import { ListItem } from "../ListItem/ListItem"
-import { StyledList } from "./style"
+import { Empty, EmptyText, StyledList } from "./style"
 
-export const List = () => {
-  return (
-    <StyledList>
-        <ListItem text='shoping' cost={100}/>
-      
-    </StyledList>
-  )
+interface IProps {
+  deleteExpense: (id: string) => void
+}
+
+export const List = ({deleteExpense}: IProps) => {
+
+  const {expenses} = useExpensesContext()
+
+
+  if(expenses) {
+    return (<StyledList>
+              {expenses.map((expense) => {
+                return (<ListItem deleteExpense={deleteExpense} expense={expense} text='sdkjsdhfhsdf'/>)
+              })}
+              
+            </StyledList>)
+  } else {
+    return (
+      <StyledList>
+          <Empty> 
+            <EmptyText>Ooooops 🙈</EmptyText>
+          </Empty>   
+      </StyledList>
+    )
+  }
+
+  
 }

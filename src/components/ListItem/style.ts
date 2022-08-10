@@ -17,7 +17,7 @@ export const Title = styled.p`
     color: #000000;
     margin-bottom: 14px;
 `
-export const Icons = styled.button`
+export const DeleteButton = styled.button`
     background: url(${close});
     background-repeat: no-repeat;
     width: 7%;
