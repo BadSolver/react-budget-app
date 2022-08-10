@@ -1,4 +1,4 @@
-import { ChangeEvent, useState } from 'react'
+import { useState } from 'react'
 import { useBudgetContext } from '../../context/BudgetContext/BudgetContext'
 import { useCurrencyContext } from '../../context/CurrencyContext/CurrencyContext'
 import { useInput } from '../../hooks/useInput'
@@ -8,7 +8,6 @@ export const CardBudget = () => {
 
   const {budget, changeBudget} = useBudgetContext()
   const [isEditMode, setIsEditMode] = useState(true)
-  const [valueInput, setValueInput] = useState('')
   const {currency} = useCurrencyContext()
   const [inputOptions, clearInput] = useInput('')
 
@@ -30,7 +29,7 @@ export const CardBudget = () => {
     <StyledCardBudget>
       {isEditMode ? 
       <>
-        <Title>Budget: {currency} {budget} </Title>
+        <Title>Budget: {currency}{budget} </Title>
         <Button onClick={hadleEditMode}>Edit</Button>
       </> : 
       <>
