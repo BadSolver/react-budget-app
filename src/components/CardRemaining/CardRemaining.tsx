@@ -1,5 +1,5 @@
-import { useCurrencyContext } from "../../context/CurrencyContext/CurrencyContext";
-import { useRemaining } from "../../hooks/useRemainig";
+import { useCurrencyContext } from "../../context";
+import { useRemaining } from "../../hooks";
 import { RemainingTitle, StyledCardRemaining } from "./style";
 
 export const CardRemaining = () => {
