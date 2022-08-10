@@ -4,7 +4,6 @@ import { IOption } from "../../types";
 export const customStyles: StylesConfig<IOption> = {
     control: (styles) => ({
       ...styles,
-      textAlign: "left",
       borderRadius: "5px",
       marginLeft: "116px",
       marginRight: "20px",
@@ -21,6 +20,7 @@ export const customStyles: StylesConfig<IOption> = {
     option: (styles) => ({
         ...styles,
         fontSize: "12px",
-      }),
+        textAlign: "center",
+      })
   };
   

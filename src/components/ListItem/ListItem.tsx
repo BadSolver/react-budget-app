@@ -1,18 +1,20 @@
-import { Badge } from "../Badge/Badge"
-import { Icons, StyledListItem, Title } from "./style"
-import close from '../../assets/icons/close.svg'
+import { IExpense } from "../../context";
+import { Badge } from "../Badge/Badge";
+import { DeleteButton, StyledListItem, Title } from "./style";
 
 interface IProps {
-    text: string,
-    cost: number
+  deleteExpense: (id: string) => void;
+  expense: IExpense;
 }
 
-export const ListItem = ({text, cost}: IProps) => {
+export const ListItem = ({ deleteExpense, expense }: IProps) => {
+  const { id, body } = expense;
+
   return (
-    <StyledListItem>
-        <Title>{text}</Title>
-        <Badge cost={cost}></Badge>
-        <Icons src={close}></Icons>
+    <StyledListItem id={id}>
+      <Title>{body}</Title>
+      <Badge />
+      <DeleteButton onClick={() => deleteExpense(id)} />
     </StyledListItem>
-  )
-}
+  );
+};

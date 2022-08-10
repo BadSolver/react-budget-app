@@ -1,13 +1,15 @@
-import { Cost, StyledBadge } from "./style"
+import { useCurrencyContext, useExpensesContext } from "../../context";
+import { Cost, StyledBadge } from "./style";
 
-interface IProps {
-    cost: number;
-}
+export const Badge = () => {
+  const { expenses } = useExpensesContext();
+  const { currency } = useCurrencyContext();
 
-export const Badge = ({cost}: IProps) => {
   return (
     <StyledBadge>
-        <Cost>${cost}</Cost>
+      {expenses.map((expense) => {
+        return <Cost>{currency + expense.cost}</Cost>;
+      })}
     </StyledBadge>
-  )
-}
+  );
+};

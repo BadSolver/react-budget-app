@@ -1,6 +1,7 @@
 import styled from "styled-components";
+import close from '../../assets/icons/close.svg'
 
-export const StyledListItem = styled.div`
+export const StyledListItem = styled.li`
     display: flex;
     justify-content: space-around;
     width: 335px;
@@ -16,6 +17,10 @@ export const Title = styled.p`
     color: #000000;
     margin-bottom: 14px;
 `
-export const Icons = styled.img`
-    margin-bottom: 10px;
+export const DeleteButton = styled.button`
+    background: url(${close});
+    background-repeat: no-repeat;
+    width: 7%;
+    border: none;
+    cursor: pointer;
 `

@@ -6,6 +6,7 @@ export const StyledBadge = styled.div`
     background-color: #23C9FF;
     border-radius: 10px;
     margin-left: 110px;
+    margin-bottom: 10px;
 `
 export const Cost = styled.p`
     padding:3px 13px ;

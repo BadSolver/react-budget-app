@@ -1,27 +1,39 @@
-import Select from "react-select";
+import Select, { SingleValue } from "react-select";
+import { Currency } from "../../config";
+import { useCurrencyContext } from "../../context";
 import { IOption } from "../../types";
 import { customStyles } from "./style";
 
-export const options: IOption[] = [{
-    value: '$',
-    label: 'USD'
-},
-{
-    value: '€',
-    label: 'EUR',
-},
-{
-    value: '£',
-    label: 'GBR',
-}]
+export const options: IOption[] = [
+  {
+    value: Currency.USD,
+    label: "USD",
+  },
+  {
+    value: Currency.EUR,
+    label: "EUR",
+  },
+  {
+    value: Currency.GBR,
+    label: "GBR",
+  },
+];
 
-interface IProps {
-  options: IOption[],
-  currencies: IOption,
-}
+export const CustomSelect = () => {
+  const { currency, setCurrency } = useCurrencyContext();
+  const handleOptions = (option: SingleValue<IOption>) => {
+    if (option) {
+      setCurrency(option.value);
+    }
+  };
 
-export const CustomSelect = ({options, currencies}: IProps) => {
   return (
-    <Select options={options} isMulti={false} styles={customStyles} defaultValue={currencies}/>
-  )
-}
+    <Select
+      options={options}
+      isMulti={false}
+      styles={customStyles}
+      onChange={handleOptions}
+      value={options.find((option) => option.value === currency)}
+    />
+  );
+};
