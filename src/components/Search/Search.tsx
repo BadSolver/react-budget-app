@@ -1,7 +1,5 @@
-import { StyledSearch } from "./style"
+import { StyledSearch } from "./style";
 
 export const Search = () => {
-  return (
-    <StyledSearch placeholder="search..."/>
-  )
-}
+  return <StyledSearch placeholder="search..." />;
+};

@@ -1,6 +1,6 @@
 import Select, { SingleValue } from "react-select";
-import { Currency } from "../../config/currency";
-import { useCurrencyContext } from "../../context/CurrencyContext/CurrencyContext";
+import { Currency } from "../../config";
+import { useCurrencyContext } from "../../context";
 import { IOption } from "../../types";
 import { customStyles } from "./style";
 

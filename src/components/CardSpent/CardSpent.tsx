@@ -1,14 +1,15 @@
-import { useCurrencyContext } from '../../context/CurrencyContext/CurrencyContext'
-import { RemainingTitle } from '../CardRemaining/style'
-import { StyledCardSpent } from './style'
+import { useCurrencyContext } from "../../context";
+import { useSpent } from "../../hooks";
+import { RemainingTitle } from "../CardRemaining/style";
+import { StyledCardSpent } from "./style";
 
 export const CardSpent = () => {
-
-  const {currency} = useCurrencyContext()
+  const { currency } = useCurrencyContext();
+  const spentA = useSpent();
 
   return (
     <StyledCardSpent>
-        <RemainingTitle>Spent so far: {currency}1000</RemainingTitle>
+      <RemainingTitle>Spent so far: {currency + spentA} </RemainingTitle>
     </StyledCardSpent>
-  )
-}
+  );
+};
