@@ -1,3 +1,3 @@
 import { CardRemaining } from "./CardRemaining";
 
-export {CardRemaining}
+export { CardRemaining };
