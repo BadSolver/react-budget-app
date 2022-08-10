@@ -22,6 +22,5 @@ export const DeleteButton = styled.button`
     background-repeat: no-repeat;
     width: 7%;
     border: none;
-    margin-bottom: 10px;
     cursor: pointer;
 `

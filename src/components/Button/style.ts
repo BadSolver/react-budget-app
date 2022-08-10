@@ -9,5 +9,5 @@ export const StyledButton = styled.button`
     font-size: 16px;
     line-height: 19px;
     margin: 45px auto;
-
+    cursor: pointer
 `
